@@ -4,8 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculator</title>
+  <link rel="stylesheet" href="src/style.css">
 </head>
 <body>
-  
+  <div id="calculator">
+    <div class="display">
+      <input id="output" readonly>
+    </div>
+    <div id="buttons" class="buttons">
+      <button onclick="greet()" class="special2">G</button>
+      <button onclick="turnOff()" class="special2">BYE</button>
+      <button id="clear" onclick="resetDisplay()" class="special1">AC</button>
+      <button onclick="deleteDisplay()" class="special1">DEL</button>
+      <button onclick="displayAppend('7')">7</button>
+      <button onclick="displayAppend('8')">8</button>
+      <button onclick="displayAppend('9')">9</button>
+      <button onclick="displayAppend('÷')" class="operation">÷</button>
+      <button onclick="displayAppend('4')">4</button>
+      <button onclick="displayAppend('5')">5</button>
+      <button onclick="displayAppend('6')">6</button>
+      <button onclick="displayAppend('×')" class="operation">×</button>
+      <button onclick="displayAppend('1')">1</button>
+      <button onclick="displayAppend('2')">2</button>
+      <button onclick="displayAppend('3')">3</button>
+      <button onclick="displayAppend('-')" class="operation">-</button>
+      <button onclick="displayAppend('0')">0</button>
+      <button onclick="displayAppend('.')">.</button>
+      <button onclick="displayAppend('=')" >=</button>
+      <button onclick="displayAppend('+')" class="operation">+</button>
+    </div>
+  </div>
+  <script src="src/main.js"></script>
 </body>
 </html>

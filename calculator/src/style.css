@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #F1DBDE;
+
+}
+#calculator {
+    overflow: hidden;
+    border: 3.5px solid rgba(10, 10, 10, 1);
+    box-shadow: 14px 12px 0px rgba(10, 10, 10, 0.8);
+    max-width: 340px;
+    border-radius: 20px;
+}
+
+.buttons{
+    background-color: #CC7C84;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 15px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+button{
+    font-family: 'Montserrat', sans-serif; /* Apply the font to the body */
+    font-weight:900;
+    font-size: 16px;
+    background-color: #F1DBDE;
+    width: 65px;
+    height: 65px;
+    border: none;
+    border: 3px solid rgba(30, 30, 30, 1);;
+    box-shadow: 3px 3px 0px rgba(10, 10, 10, 0.8);
+    border-radius: 10px;
+}
+
+.display {
+    width: 100%;
+}
+
+.operation{
+    background-color: #C68394;
+}
+
+.special2 {
+    background-color: #d2374c;
+}
+
+.special1 {
+    background-color: #ff6e81;
+}
+
+button:hover {
+    background-color: #ffeef0;
+}
+
+button:active {
+    background-color: #ffffff;
+}
+
+button.operation:hover {
+    background-color: #db95a7;
+}
+
+button.operation:active {
+    background-color: #ffb9ca;
+}
+
+button.special1:hover {
+    background-color: #ff8999;
+}
+
+button.special1:active {
+    background-color: #ffb7c0;
+}
+
+button.special2:hover {
+    background-color: #ff566c;
+}
+
+button.special2:active {
+    background-color: #ff8a9a;
+}
+
+.display {
+    background-color: #F1DBDE;
+    height: 100px;
+    width: 100%;
+    border: none;
+    color: rgba(30, 30, 30, 1);;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+#output {
+    background-color: #F1DBDE;
+    border: none;
+    color:rgba(40, 40, 40, 1);
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    text-align: right;
+
+    font-size: 45px;
+    font-weight: 900;
+}
+

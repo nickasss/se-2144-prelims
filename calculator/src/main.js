@@ -3,6 +3,11 @@ const display = document.getElementById('output');
 function displayAppend(input) {
     const operators = ['+', '-', '÷', '×'];
 
+    // Prevent adding more characters if the length is 10
+    if (display.value.length >= 10) {
+        return; // exit if display already has 10 characters
+    }
+
     // check for multiple decimal points in the same number
     if (input === '.') {
         const tokens = display.value.split(/[\+\-\×÷]/);
@@ -40,7 +45,10 @@ function displayAppend(input) {
                 .replace(/×/g, '*')
                 .replace(/--/g, '+');
 
-            display.value = eval(expression); // evaluate the expression
+            let result = eval(expression); // evaluate the expression
+
+            // Convert the result to string and limit to 10 characters
+            display.value = String(result).slice(0, 10);
         } catch {
             display.value = "Error"; // show error for invalid expressions
             setTimeout(() => {
@@ -52,6 +60,8 @@ function displayAppend(input) {
         display.value += input;
     }
 }
+
+
 
 function resetDisplay() {
     const buttons = document.querySelectorAll('#buttons button');
@@ -79,17 +89,34 @@ function turnOff() {
 }
 
 function greet() {
+    const greetings = [
+        "Hello!",       // english
+        "¡Hola!",       // spanish
+        "Bonjour!",     // french
+        "Hallo!",       // german
+        "Ciao!",        // italian
+        "こんにちは!",  // japanese
+        "你好!",        // chinese
+        "안녕하세요!",    // korean
+        "Olá!",         // portuguese
+        "Привет!",      // russian
+    ];
+
+    const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+
     const buttons = document.querySelectorAll('#buttons button');
     buttons.forEach(button => {
         if (button.id !== 'clear')
-            button.disabled = true; // disable buttons except clear
+            button.disabled = true; // disable other buttons
     });
-    display.value = "Hello!"; // show hello message
+
+    display.value = randomGreeting; // display random greeting
     setTimeout(() => {
-        display.value = ''; // clear display after a delay
+        display.value = ''; // clear display after delay
         buttons.forEach(button => {
             if (button.id !== 'clear')
                 button.disabled = false; // enable buttons again
         });
     }, 1000);
 }
+
